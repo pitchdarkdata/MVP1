@@ -1,0 +1,33 @@
+{
+  "name": "my-first-probot-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "a simple testing app",
+  "author": "SasikumarKalaichelvan <sasikumar6795@gmail.com>",
+  "license": "ISC",
+  "homepage": "https://github.com/sasikumar6795/my-first-probot-app",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "start": "probot run ./index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@octokit/rest": "^18.12.0",
+    "probot": "^11.0.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "nock": "^13.0.5",
+    "smee-client": "^1.2.2"
+  },
+  "engines": {
+    "node": ">= 10.13.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
