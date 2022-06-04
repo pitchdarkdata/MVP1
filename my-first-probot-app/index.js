@@ -17,14 +17,16 @@ try {
         const data = context.payload;
         // reading data from api 
         
-        const cloneUrl =data.repository?.clone_url;
+        const clone_url =data.repository?.clone_url;
         const source = data.pull_request.head.ref;
         const destination = data.pull_request.base.ref;
+        const commit = data.pull_request.head.sha;
     
         const mockDataSending ={
-          'cloneUrl' : cloneUrl,
+          'clone_url' : clone_url,
           'source' : source,
-          'destination': destination
+          'destination': destination,
+          'commit':commit
         }
     
         let stringifiedData = JSON.stringify(mockDataSending);
@@ -52,7 +54,7 @@ try {
           {
             outPutReviewers.push(final[i]);
           }
-        const outPutReviewer = outPutReviewers;
+          const outPutReviewer = outPutReviewers;
           console.log(`final: ${outPutReviewers instanceof Array}`);
           
           //console.log(`final: ${parsed}`);
