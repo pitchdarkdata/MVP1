@@ -6,7 +6,11 @@
 
 ```sh
 # Install dependencies
+
+#Node Modules
 npm install
+#octokit dependencies
+npm install @octokit/rest
 
 # Run the bot
 npm start
