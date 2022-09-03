@@ -21,12 +21,14 @@ try {
         const source = data.pull_request.head.ref;
         const destination = data.pull_request.base.ref;
         const commit = data.pull_request.head.sha;
+        const repo_name = data.repository?.name;
     
         const mockDataSending ={
-          'clone_url' : clone_url,
+          'repo_url' : clone_url,
           'source' : source,
           'destination': destination,
-          'commit':commit
+          'commit':commit,
+          'repo_name' : repo_name,
         }
     
         let stringifiedData = JSON.stringify(mockDataSending);
