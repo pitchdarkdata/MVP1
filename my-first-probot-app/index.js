@@ -62,7 +62,7 @@ try {
           //console.log(`final: ${parsed}`);
           //adding reviewers
           const reviewer = context.pullRequest({
-          reviewers:[outPutReviewer] 
+          reviewers:outPutReviewer
           });
       
         context.octokit.rest.pulls.requestReviewers(reviewer);
