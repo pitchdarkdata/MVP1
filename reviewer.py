@@ -1,5 +1,5 @@
 """
-Module to perform reviewer addition action for a Pull Request
+Module to perform reviewer addition action for a Pull Requests
 """
 import os
 import sys
