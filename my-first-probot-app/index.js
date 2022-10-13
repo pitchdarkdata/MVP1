@@ -35,10 +35,11 @@ try {
     
         const {spawn} = require('child_process');
     
-        const childPython = spawn('python', ['./reviewer.py', stringifiedData]);
+        const childPython = spawn('python3', ['./reviewer.py', stringifiedData]);
         //const childPython = spawn('python', ['--version'])
         childPython.stdout.on('data', function (data)  {
             console.log(`stdOut: ${data}`);
+            result="";
             result+=data.toString();
             
         })
@@ -48,9 +49,8 @@ try {
     
         childPython.on('close', (code) => {
           app.log.info(`child process exited with code: ${code}`);
-          app.log.info(`outPutReviewers: ${code.toString()}`);
           result=result.replace(/[^a-zA-Z0-9 ]/g, "");
-          console.log(`result: ${result}`);
+          app.log.info(`result: ${result}`);
           final=result.split(" ");
           for(let i=0; i<final.length;i++)
           {
@@ -59,7 +59,6 @@ try {
           const outPutReviewer = outPutReviewers;
           console.log(`final: ${outPutReviewers instanceof Array}`);
           
-          //console.log(`final: ${parsed}`);
           //adding reviewers
           const reviewer = context.pullRequest({
           reviewers:outPutReviewer
