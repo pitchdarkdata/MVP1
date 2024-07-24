@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Digitize Repo Ownership",
+  "type": "object",
+  "properties": {
+    "AddOnAllPRs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "namespace-specific-reviewers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "match": {
+            "type": "string"
+          },
+          "reviewers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["match", "reviewers"],
+        "additionalProperties": false
+      }
+    },
+    "LanguageExperts": {
+      "type": "object",
+      "properties": {
+        "js": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "java": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "py": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "groovy": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "txt": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "json": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "yaml": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["AddOnAllPRs", "namespace-specific-reviewers", "LanguageExperts"],
+  "additionalProperties": false
+}
