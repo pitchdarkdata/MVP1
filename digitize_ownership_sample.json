@@ -1,0 +1,41 @@
+The easiest way to loadshare your review workload as well as defining roles each member of your team in a thankless job like codereview is the only way to excellence.
+###
+AddOnAllPRs: Contains a list of users to be added on all pull requests.
+namespace-specific-reviewers: Contains an array of objects, each specifying a namespace pattern (match) and corresponding reviewers (reviewers).
+LanguageExperts: Contains an object where each key is a file extension representing a programming language, and the value is an array of reviewers who are experts in that language. Additional programming languages such as C++, C#, PHP, Ruby, Swift, Kotlin, R, Go, and TypeScript are included.
+###
+{
+    "LanguageExperts": {
+    "js": ["jsExpert1", "jsExpert2"],
+    "java": ["javaExpert1", "javaExpert2"],
+    "py": ["pythonExpert1", "pythonExpert2"],
+    "groovy": ["groovyExpert"],
+    "txt": ["textExpert"],
+    "json": ["jsonExpert"],
+    "yaml": ["yamlExpert"],
+    "cpp": ["cppExpert1", "cppExpert2"],
+    "csharp": ["csharpExpert"],
+    "php": ["phpExpert"],
+    "ruby": ["rubyExpert"],
+    "swift": ["swiftExpert1", "swiftExpert2"],
+    "kotlin": ["kotlinExpert"],
+    "r": ["rExpert"],
+    "go": ["goExpert"],
+    "ts": ["typescriptExpert"]
+  },
+  "namespace-specific-reviewers": [
+    {
+      "match": "namespaceA/.*",
+      "reviewers": ["alice", "bob"]
+    },
+    {
+      "match": "namespaceB/.*",
+      "reviewers": ["charlie", "david"]
+    },
+    {
+      "match": "namespaceC/.*",
+      "reviewers": ["eve", "frank"]
+    }
+  ],
+    "AddOnAllPRs": ["johnDoe", "janeSmith"]
+}
