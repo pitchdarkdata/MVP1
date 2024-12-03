@@ -15,7 +15,7 @@ try {
     app.log.info("Yay, the app was loaded!");
     app.on("pull_request.opened", async (context) => {
         const data = context.payload;
-        // reading data from api 
+        // reading data from github api 
         
         const clone_url =data.repository?.clone_url;
         const source = data.pull_request.head.ref;
