@@ -1,5 +1,5 @@
 /**
- * This is the main entrypoint to your Probot app
+ * This is the entrypoint to your Probot app
  * @param {import('probot').Probot} app
  * 
  * 
